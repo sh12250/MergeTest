@@ -28,6 +28,7 @@ namespace TestGitMerge
         }
     }
     // }        2023. 07. 03. Modified class position / Alpha
+    // commit test
     public class Program
     {
         static void Main(string[] args)
