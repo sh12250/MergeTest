@@ -10,7 +10,29 @@ namespace TestGitMerge
     {
         static void Main(string[] args)
         {
-            Console.Write("Test");
+            Ruler ruler = new Ruler(10);
+            ruler.Run();
+        }
+    }
+
+    public class Ruler
+    {
+        private const float ONE_INCH = 2.54f;
+        public int CentiMeter { get; set; } = 0;
+        public float Inch
+        {
+            get { return CentiMeter * ONE_INCH; }
+            private set { CentiMeter = (int)(value / ONE_INCH); }
+        }
+
+        public Ruler(int cmValue)
+        {
+            CentiMeter = cmValue;
+        }
+
+        public void Run()
+        {
+            Console.WriteLine($"{this.CentiMeter}cm 는 {this.Inch}inch 입니다.");
         }
     }
 }
