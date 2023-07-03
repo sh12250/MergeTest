@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestGitMerge
 {
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-            Ruler ruler = new Ruler(10);
-            ruler.Run();
-        }
-    }
-
+    // {        2023. 07. 03. Modified class position / Alpha
     public class Ruler
     {
         private const float ONE_INCH = 2.54f;
@@ -22,8 +14,7 @@ namespace TestGitMerge
         public float Inch
         {
             get { return CentiMeter * ONE_INCH; }
-        // {        2023. 07. 03.       Add private _SetInch function / Gamma
-            private set { this._SetInch(value); }
+            private set { CentiMeter = (int)(value / ONE_INCH); }
         }
 
         public Ruler(int cmValue)
@@ -35,8 +26,15 @@ namespace TestGitMerge
         {
             Console.WriteLine($"{this.CentiMeter}cm 는 {this.Inch}inch 입니다.");
         }
-
-        private void _SetInch(float inchValue) { CentiMeter = (int)(inchValue / ONE_INCH); }
-        // }        2023. 07. 03.       Add private _SetInch function / Gamma
+    }
+    // }        2023. 07. 03. Modified class position / Alpha
+    // commit test
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Ruler ruler = new Ruler(10);
+            ruler.Run();
+        }
     }
 }
