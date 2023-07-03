@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestGitMerge
 {
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-            Ruler ruler = new Ruler(10);
-            ruler.Run();
-        }
-    }
-
+    // {        2023. 07. 03. Modified class position / Alpha
     public class Ruler
     {
         private const float ONE_INCH = 2.54f;
@@ -33,6 +25,15 @@ namespace TestGitMerge
         public void Run()
         {
             Console.WriteLine($"{this.CentiMeter}cm 는 {this.Inch}inch 입니다.");
+        }
+    }
+    // }        2023. 07. 03. Modified class position / Alpha
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Ruler ruler = new Ruler(10);
+            ruler.Run();
         }
     }
 }
