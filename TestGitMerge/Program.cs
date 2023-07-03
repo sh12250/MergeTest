@@ -22,7 +22,8 @@ namespace TestGitMerge
         public float Inch
         {
             get { return CentiMeter * ONE_INCH; }
-            private set { CentiMeter = (int)(value / ONE_INCH); }
+        // {        2023. 07. 03.       Add private _SetInch function / Gamma
+            private set { this._SetInch(value); }
         }
 
         public Ruler(int cmValue)
@@ -34,5 +35,8 @@ namespace TestGitMerge
         {
             Console.WriteLine($"{this.CentiMeter}cm 는 {this.Inch}inch 입니다.");
         }
+
+        private void _SetInch(float inchValue) { CentiMeter = (int)(inchValue / ONE_INCH); }
+        // }        2023. 07. 03.       Add private _SetInch function / Gamma
     }
 }
